@@ -31,7 +31,7 @@ def add_transaction(date, category, description, amount, t_type):
     cursor.execute("""
         INSERT INTO transactions (date, category, description, amount, type)
         VALUES (?, ?, ?, ?, ?)
-""", (date, category, description, amount, t_type))
+""", (date, category, description, f"${amount}", t_type))
 
     conn.commit()
     conn.close()
